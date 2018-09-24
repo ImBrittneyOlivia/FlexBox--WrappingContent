@@ -1,0 +1,36 @@
+body {
+  margin: 0; /*no space or margin for our web page*/
+  display: flex; /*flex container  (on our parent container) needed to use flexbox*/
+}
+
+#side-nav {
+  width: 300px; /*how wide our side nav will be*/
+  background-color: #6b9482; /*Side nav color*/
+  height: 100vh; /*Height will be 100 percent of view port*/
+  position: fixed; /*Side nav to stay fixed*/
+}
+
+#content {
+  display: flex; /*flex container  (on our parent container) needed to use flexbox*/
+  flex: 1; /*dividing page into fractions- they will also size evenly when you adjust the view*/
+  flex-wrap: wrap;
+  margin-left: 300px; /*add margin to the left so the side nav wont be overlapping the content section*/
+}
+#content div {
+  border: 1px solid black;
+  height: 5em;
+  flex: 1;
+  margin: 5px;
+  min-width: 300px;
+}
+#content #hidden {
+  border: 1px solid black;
+  height: 0; /*so it looks like it is not there*/
+  flex: 1;
+  margin: 5px;
+  min-width: 300px;
+  opacity: 0; /* so it looks like it is invisible*/
+}
+
+/* When you use flex-wrap on your parent element --in this case the content div, You will also need to add a min-width or height 
+so it knows when to create a new line. In this case it will create a new line when the child element (the div in this case) is less then 300px.*/
